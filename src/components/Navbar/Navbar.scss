@@ -1,0 +1,172 @@
+:root{
+    --primaryColor:hsl(199,100%,33%);
+    --SecondaryColor:hsl(187,85%,43%);
+    // --GradientColor:linear-gradient(to right, hsl(187, 50%, 56%),hwb(199 57% 11%));
+    --whiteColor:hsl(0,0,100%);
+    --blackColor:hsl(201,33%,16%);
+    --textColor:hsl(240,4%,36%);
+    --WhiteColorDeam:hsl(0,0,93%);
+    --grayText:rgb(190,190,190);
+    --inputText:rgb(239,239,239);
+    --BodyText:rgb(240,240,240);
+    --carBG:rgb(225,225,225);
+ 
+}
+.header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:white;
+    width: 100%;
+    padding: 1rem;
+    z-index: 3000;
+    box-shadow: 0 2px 4px rgba(2,15,29,0.904);
+
+    .logo{
+        color: var(--blackColor);
+        font-weight: 600;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        .icon{
+            font-size: 25px;
+            color: var(--primaryColor);
+            transform: translateY(5px);
+        }
+        
+    }
+    .navBar{
+        display: flex;
+        gap: 15px;
+    }
+   
+    @media screen and (max-width:768px) {
+        .navBar{
+            position: absolute;
+            background: var(--WhiteColorDeam);
+            height: max-content;
+            width: 50%;
+            padding: 1rem;
+            border-radius: 1rem;
+            top: -500rem;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 2000;
+            transition: .8s  ease-in-out;
+            box-shadow: 0 2px 4px rgba(2,15,29,0.904);
+            background: white;
+            .navLists{
+                flex-direction: column;
+                // justify-content: center;
+                width: 100%;
+                margin: auto;
+                padding: .5rem 0;
+                .navItem{
+                    padding: .5rem 0;
+
+                    .navLinks{
+                        color: var(--blackColor);
+                        font-size: .9rem;
+                        font-weight: 600;
+                
+                    &:hover{
+                        color: var(--primaryColor);
+                    }
+                    }
+                    
+                }
+                .btn{
+                    margin-top: 1rem;
+               
+                a{
+                    font-weight: 600;
+                   color:white;
+                   
+                
+                }
+            }
+            
+            }
+            .CloseNavbar{
+                position: absolute;
+                top: .5rem;
+                right: 0;
+                color: var(--primaryColor);
+                &:hover{
+                    color: var(--SecondaryColor);
+
+                }
+            }
+        }
+        
+    }
+    .activeNavbar{
+        top: 7rem;
+
+    }
+    .toggleNavbar{
+        font-size: 25px;
+        color: var(--primaryColor);
+
+    }
+    &:hover .icon{
+        color: var(--SecondaryColor);
+    }
+}
+// ................................
+@media  screen and (min-width:769px) {
+    .toggleNavbar,.CloseNavbar{
+        display: none;
+    }
+    .header{
+        padding: 1.5rem 2rem;
+        .navBar{
+            .navLists{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                .navItem{
+                    .navLinks{
+                        color: var(--textColor);
+                        padding: 0  0.55rem;
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                    &:hover{
+                        color: var(--primaryColor);
+
+                    }
+                    }
+                }
+                .btn{
+                    margin-left: 1rem;
+                    a{
+                        color:white;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+@media  screen and (min-width:960px) {
+    .header
+{
+    .navBar{
+        .navLists{
+            .navItem{
+                    padding: 0 0.7rem;
+                
+            }
+        }
+    }
+}
+    
+}
+@media screen and (min-width:1240px) {
+    .header{
+   padding: 1rem 8.5rem;
+}
+    
+}
